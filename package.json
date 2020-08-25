@@ -7,8 +7,26 @@
   "author": "mcgraths7 <mcgrath.steven7@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "bulma": "^0.9.0",
+    "css-loader": "^4.2.2",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.21.2"
+    "eslint-plugin-import": "^2.21.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "mini-css-extract-plugin": "^0.10.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "sass-loader": "^10.0.1",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "watch": "webpack --mode production"
   }
 }
