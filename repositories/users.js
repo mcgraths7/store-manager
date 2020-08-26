@@ -1,10 +1,13 @@
 /* eslint-disable no-restricted-syntax */
 const fs = require('fs');
 const crypto = require('crypto');
+const util = require('util');
 
-const randomId = () => (
-  crypto.randomBytes(4).toString('hex')
-);
+const randomId = () => crypto.randomBytes(4).toString('hex');
+const scrypt = util.promisify(crypto.scrypt);
+const generatePasswordHash = (password, salt, keyLen) =>
+  // eslint-disable-next-line implicit-arrow-linebreak
+  scrypt(password, salt, keyLen, (err, derivedKey) => derivedKey.toString('hex'));
 
 class UsersRepository {
   constructor(filename) {
@@ -32,18 +35,24 @@ class UsersRepository {
     const newAttrs = { ...attrs };
     newAttrs.id = randomId();
 
+    const { password } = newAttrs;
+    const salt = crypto.randomBytes(8).toString('hex');
+    const hashBuffer = await generatePasswordHash(password, salt, 64);
+
+    const record = {
+      ...newAttrs,
+      password: `${hashBuffer.toString('hex')}.${salt}`,
+    };
+
     const records = await this.getAll();
-    records.push(newAttrs);
+    records.push(record);
 
     await this.writeAll(records);
-    return newAttrs;
+    return record;
   }
 
   async writeAll(records) {
-    await fs.promises.writeFile(
-      this.filename,
-      JSON.stringify(records, null, 2),
-    );
+    await fs.promises.writeFile(this.filename, JSON.stringify(records, null, 2));
   }
 
   async getOne(id) {
@@ -86,6 +95,17 @@ class UsersRepository {
       }
     }
     return {};
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  async authenticate(savedPassword, suppliedPassword) {
+    /* savedPassword is saved in the database in the format
+       hashedPassword.salt
+       suppliedPassword is the unmodified password we receive from the form
+    */
+    const [savedHash, savedSalt] = savedPassword.split('.');
+    const suppliedHashBuffer = await generatePasswordHash(suppliedPassword, savedSalt, 64);
+    return suppliedHashBuffer.toString('hex') === savedHash;
   }
 }
 

@@ -62,8 +62,10 @@ app.post('/signin', async (req, res) => {
     return res.status(404).send('Email not found');
   }
 
-  if (existingUser.password !== password) {
-    return res.status(400).send('Password does not match');
+  const authenticated = await userRepo.authenticate(existingUser.password, password);
+
+  if (!authenticated) {
+    return res.status(401).send('Password does not match');
   }
 
   req.session.userId = existingUser.id;

@@ -18,5 +18,15 @@
     "email": "joe@bizness.com",
     "password": "peewee",
     "id": "769181ac"
+  },
+  {
+    "email": "test@test.com",
+    "password": "1344c8ed25d9fb1396f11a7c34cb69fbbb0542091b182bd95bff34a94af300f619dcf9cd63b2ef62351dda8664f32c3e68f531020f3dc24910d9c8239390a62e.95362ab294114f7f",
+    "id": "335efee3"
+  },
+  {
+    "email": "test2@test.com",
+    "password": "b1e7da0aaba7cf87429095dcdfc18e9ed618e0ba526c631a821415c718db2c9bf4a68d84d9bb6c2837d3a910d5f3a723bb307daf01fbf33fe61da62734934140.15d8c4f8ddb6f9df",
+    "id": "2ed44a91"
   }
 ]
