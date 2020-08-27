@@ -16,11 +16,31 @@ module.exports = ({ content }) => `
       integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/css/main.css" />
     <title>Store Manager</title>
   </head>
-  <body>
-    ${content}
+   <body class="admin">
+        <header>
+          <nav class="navbar navbar-bottom">
+            <div class="container navbar-container">
+              <div>
+                <a href="/admin/products">
+                  <h2 class="title">Admin Panel</h2>
+                </a>
+              </div>
+              <div class="navbar-item">
+                <div class="navbar-start">
+                  <div class="navbar-item">
+                    <a href="/admin/products"><i class="fa fa-star"></i> Products</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </header>
+    <div class="container">
+      ${content}
+    </div>
   </body>
 </html>
-
 `;

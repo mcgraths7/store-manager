@@ -28,5 +28,15 @@
     "email": "joebiz@ness.com",
     "password": "5b853b3717a250ed8cd66dd58a0046a7adbe7cb14642dad1c732fc857ada418cfe8a83213201b434540d98c96130ecb9a0bded76502ac50592ae314c667a5ecd.61623741b7eef43a",
     "id": "adca48f2"
+  },
+  {
+    "email": "joe@bizness.com",
+    "password": "a93c675508d7f98bcf5adc85511174a5328f72f59f70b06ed2cb08f6b34bf9a396ca42b913c8497b0d65295eb6ff970c1371cd517ab7be6bad97d4ab5c089f75.1dd7b3b4be0353c3",
+    "id": "3ebd1683"
+  },
+  {
+    "email": "testbug@simgirl.com",
+    "password": "6cc5df64dd90fde8196e5f67b4b285dfca2c996cfd91614102818280e754c18b35e7c6e4ead2807723c84637bb397c00e7fe67e8533c5744d5d18405a83ed104.6ab0a0ba8abf45af",
+    "id": "ec5bc3fa"
   }
 ]

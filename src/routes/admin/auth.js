@@ -4,23 +4,34 @@ const { validationResult } = require('express-validator');
 const userRepo = require('../../repositories/users');
 const generateSignupTemplate = require('../../views/admin/auth/signup');
 const generateSigninTemplate = require('../../views/admin/auth/signin');
+const generateLayout = require('../../views/admin/layout');
 const {
   requireEmail,
   requirePasswordMinLength,
   requirePasswordMaxLength,
   requireMatchingPassword,
+  requireEmailAndPasswordMatch,
+  requireUniqueEmail,
 } = require('./validators');
 
 const authRouter = express.Router();
 
-authRouter.get('/signup', (req, res) => {
+authRouter.get('/admin', (req, res) => {
+  const message = req.session.userId
+    ? `You are logged in as ${req.session.userId}`
+    : 'You are not logged in';
+  res.status(200).send(generateLayout({ content: message }));
+});
+
+authRouter.get('/admin/signup', (req, res) => {
   res.status(200).send(generateSignupTemplate({ req, errors: {} }));
 });
 
 authRouter.post(
-  '/signup',
+  '/admin/signup',
   [
     requireEmail,
+    requireUniqueEmail,
     requirePasswordMinLength,
     requirePasswordMaxLength,
     requireMatchingPassword,
@@ -44,32 +55,29 @@ authRouter.post(
   },
 );
 
-authRouter.get('/signin', (req, res) => {
-  res.status(200).send(generateSigninTemplate());
+authRouter.get('/admin/signin', (req, res) => {
+  res.status(200).send(generateSigninTemplate({ req, errors: {} }));
 });
 
-authRouter.post('/signin', async (req, res) => {
-  const { email, password } = req.body;
-  const existingUser = await userRepo.getOneBy({ email });
+authRouter.post(
+  '/admin/signin',
+  [requireEmail, requireEmailAndPasswordMatch],
+  async (req, res) => {
+    const { email } = req.body;
+    const errors = validationResult(req);
 
-  if (!existingUser) {
-    return res.status(404).send('Email not found');
-  }
+    if (!errors.isEmpty()) {
+      return res.status(400).send(generateSigninTemplate({ req, errors }));
+    }
 
-  const authenticated = await userRepo.authenticate(
-    existingUser.password,
-    password,
-  );
+    const existingUser = await userRepo.getOneBy({ email });
 
-  if (!authenticated) {
-    return res.status(401).send('Password does not match');
-  }
+    req.session.userId = existingUser.id;
+    return res.status(200).redirect('/');
+  },
+);
 
-  req.session.userId = existingUser.id;
-  return res.status(200).redirect('/');
-});
-
-authRouter.get('/signout', (req, res) => {
+authRouter.get('/admin/signout', (req, res) => {
   req.session = null;
   return res.status(200).redirect('/');
 });
