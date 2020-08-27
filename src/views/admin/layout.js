@@ -1,4 +1,9 @@
-module.exports = ({ content }) => `
+const { generateAuthButtons } = require('../viewHelpers');
+
+module.exports = ({ req, content }) => {
+  const { userId } = req.session;
+  const authButtons = userId ? generateAuthButtons(userId) : generateAuthButtons();
+  return `
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,8 +28,8 @@ module.exports = ({ content }) => `
         <header>
           <nav class="navbar navbar-bottom">
             <div class="container navbar-container">
-              <div>
-                <a href="/admin/products">
+              <div class="navbar-brand">
+                <a class="navbar-item" href="/admin/products">
                   <h2 class="title">Admin Panel</h2>
                 </a>
               </div>
@@ -35,7 +40,9 @@ module.exports = ({ content }) => `
                   </div>
                 </div>
               </div>
+              ${authButtons}
             </div>
+          </div>
           </nav>
         </header>
     <div class="container">
@@ -44,3 +51,4 @@ module.exports = ({ content }) => `
   </body>
 </html>
 `;
+};

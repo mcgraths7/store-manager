@@ -20,7 +20,7 @@ authRouter.get('/admin', (req, res) => {
   const message = req.session.userId
     ? `You are logged in as ${req.session.userId}`
     : 'You are not logged in';
-  res.status(200).send(generateLayout({ content: message }));
+  res.status(200).send(generateLayout({ req, content: message }));
 });
 
 authRouter.get('/admin/signup', (req, res) => {

@@ -6,8 +6,10 @@ module.exports = ({ req, errors = {} }) => {
   const { email } = req.body;
 
   return addLayout({
+    req,
     content: `
       <div class="box">
+
         <form method="POST">
           <h3 class="title">Sign Up</h3>
           <div class="field">
@@ -30,7 +32,12 @@ module.exports = ({ req, errors = {} }) => {
           <div class="field">
             <label class="label">Password</label>
             <div class="control has-icons-left">
-              <input class="input" name="password" type="password" placeholder="Password">
+              <input
+              class="input"
+              name="password"
+              type="password"
+              placeholder="Password"
+              >
               <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
               </span>
@@ -41,7 +48,12 @@ module.exports = ({ req, errors = {} }) => {
           <div class="field">
             <label class="label">Confirm Password</label>
             <div class="control has-icons-left">
-              <input class="input" name="passwordConfirmation" type="password" placeholder="Confirm password">
+              <input
+              class="input"
+              name="passwordConfirmation"
+              type="password"
+              placeholder="Confirm password"
+              >
               <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
               </span>
@@ -54,8 +66,7 @@ module.exports = ({ req, errors = {} }) => {
             </div>
           </div>
         </form>
-        <a href="/admin/signin">Have an account? Sign In</a>
-        </div>
-`,
+      </div>
+    `,
   });
 };

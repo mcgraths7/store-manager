@@ -4,6 +4,7 @@ const { getErrors } = require('../../viewHelpers');
 module.exports = ({ req, errors }) => {
   const { email } = req.body;
   return addLayout({
+    req,
     content: `
       <div class="box">
         <form method="POST">
@@ -28,7 +29,12 @@ module.exports = ({ req, errors }) => {
           <div class="field">
             <label class="label">Password</label>
             <div class="control has-icons-left">
-              <input class="input" name="password" type="password" placeholder="Password">
+              <input
+              class="input"
+              name="password"
+              type="password"
+              placeholder="Password"
+              >
               <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
               </span>
@@ -42,7 +48,6 @@ module.exports = ({ req, errors }) => {
             </div>
           </div>
         </form>
-        <a href="/admin/signup">Need an account? Sign Up</a>
       </div>
     `,
   });
