@@ -2,7 +2,9 @@ const { generateAuthButtons } = require('../viewHelpers');
 
 module.exports = ({ req, content }) => {
   const { userId } = req.session;
-  const authButtons = userId ? generateAuthButtons(userId) : generateAuthButtons();
+  const authButtons = userId
+    ? generateAuthButtons(userId)
+    : generateAuthButtons();
   return `
 <!DOCTYPE html>
 <html lang="en">

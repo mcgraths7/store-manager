@@ -1,42 +1,7 @@
 [
   {
-    "email": "joe@bizness.com",
-    "password": "227bb1981c6e25d6ce6f1ddcd286cff524ecc9593ecf4a43ad9f1b3b9e6c140e200361f7acae471ee9feac416f92ce6275edd4ffdf41ea2702bf8bce42679a5c.5d360ab9a60c3bf5",
-    "id": "7dcf4320"
-  },
-  {
-    "email": "nega@chin.com",
-    "password": "b71cd9cc25efab682d3508600267e932cd4b7182e6565de1366c9b426f0ae69e9d7a302375723502877810583334619e00b0ef07211c5ad44e12487274cb4f0e.0467c83545133c21",
-    "id": "6d60badb"
-  },
-  {
-    "email": "biz@biz.com",
-    "password": "3e99912715ed5c27333b06e0c6c541ad97beeff26dc07228b98e85ccaeb87513e1923b37dea776d3879037a5d9b8a97a153a0802a9f5e40bf989e5e73eb3e8d5.3ebc1053e8b28137",
-    "id": "b83a9f4d"
-  },
-  {
-    "email": "test@test.com",
-    "password": "674fb2282790d004262a7063d828237acf26c897ae5e49cead6dceaf3cb9f7d43966bae3a473549e4c4ca1110016e02da25b4fd9d1c586bc3a251bfffa8f20ac.949f11c35b7e59a7",
-    "id": "1fa0cb3f"
-  },
-  {
-    "email": "blah@blah.com",
-    "password": "39888233e420f5318a6dd851c8c0af9e83a560c62eb0d106d76a6e6de0b9d71ddfb9bfc6d2e1899b01e130ae07987101cb836137ddf96dd67bc3a634e67228f5.4e00b6a07263d300",
-    "id": "ee2a6dc5"
-  },
-  {
-    "email": "joebiz@ness.com",
-    "password": "5b853b3717a250ed8cd66dd58a0046a7adbe7cb14642dad1c732fc857ada418cfe8a83213201b434540d98c96130ecb9a0bded76502ac50592ae314c667a5ecd.61623741b7eef43a",
-    "id": "adca48f2"
-  },
-  {
-    "email": "joe@bizness.com",
-    "password": "a93c675508d7f98bcf5adc85511174a5328f72f59f70b06ed2cb08f6b34bf9a396ca42b913c8497b0d65295eb6ff970c1371cd517ab7be6bad97d4ab5c089f75.1dd7b3b4be0353c3",
-    "id": "3ebd1683"
-  },
-  {
-    "email": "testbug@simgirl.com",
-    "password": "6cc5df64dd90fde8196e5f67b4b285dfca2c996cfd91614102818280e754c18b35e7c6e4ead2807723c84637bb397c00e7fe67e8533c5744d5d18405a83ed104.6ab0a0ba8abf45af",
-    "id": "ec5bc3fa"
+    "email": "new@you.com",
+    "password": "8acbc1c02f782cd3f8ea8f00c8638c1d21b56df372589eb2035f65d4d32e2ca5cb24fe402301e30b40c2eda727657243f8e52d2df02d425712fa85ef26167a07.32df1bc050941eb6",
+    "id": "db6111d7"
   }
 ]
