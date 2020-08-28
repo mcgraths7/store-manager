@@ -31,30 +31,26 @@ class Repository {
   }
 
   async getOne(id) {
-    const records = await this.getall();
+    const records = await this.getAll();
     return records.find((record) => record.id === id);
   }
 
   async delete(id) {
     const records = await this.getAll();
     const filteredRecords = records.filter((record) => record.id !== id);
-    this.writeAll(filteredRecords);
+    await this.writeAll(filteredRecords);
   }
 
   async update(id, attrs) {
-    const records = this.getAll();
-    const record = this.getOne(id);
+    const records = await this.getAll();
+    const record = records.find((r) => r.id === id);
+
     if (!record) {
       throw new Error(`Record with id ${id} not found`);
     }
-    const newRecord = {
-      ...record,
-      attrs,
-    };
-    await this.writeAll({
-      ...records,
-      newRecord,
-    });
+
+    Object.assign(record, attrs);
+    await this.writeAll(records);
   }
 
   async getOneBy(filters) {

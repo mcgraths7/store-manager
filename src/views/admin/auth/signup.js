@@ -23,11 +23,11 @@ module.exports = ({ req, errors = {} }) => {
                     placeholder="Email" 
                     value="${email || ''}"
                   >
-                  ${getErrors(errors, 'email')}
                   <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
                 </div>
+                ${getErrors(errors, 'email')}
               </div>
 
               <div class="field">
@@ -42,8 +42,8 @@ module.exports = ({ req, errors = {} }) => {
                   <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                   </span>
-                  ${getErrors(errors, 'password')}
-                </div>
+                  </div>
+                ${getErrors(errors, 'password')}
               </div>
 
               <div class="field">
@@ -58,8 +58,8 @@ module.exports = ({ req, errors = {} }) => {
                   <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                   </span>
-                  ${getErrors(errors, 'passwordConfirmation')}
-                </div>
+                  </div>
+                ${getErrors(errors, 'passwordConfirmation')}
               </div>
               <div class="field">
                 <div class="control">

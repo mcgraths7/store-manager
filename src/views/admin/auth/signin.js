@@ -24,8 +24,8 @@ module.exports = ({ req, errors }) => {
                   <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
-                  ${getErrors(errors, 'email')}
-                </div>
+                  </div>
+                ${getErrors(errors, 'email')}
               </div>
 
               <div class="field">
@@ -40,8 +40,8 @@ module.exports = ({ req, errors }) => {
                   <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                   </span>
-                  ${getErrors(errors, 'password')}
-                </div>
+                  </div>
+                ${getErrors(errors, 'password')}
               </div>
 
               <div class="field">

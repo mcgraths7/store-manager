@@ -1,9 +1,14 @@
 const generateLayout = require('../layout');
 const { getErrors } = require('../../viewHelpers');
 
-module.exports = ({ req, errors }) => {
-  const { productName, productDescription, productPrice } = req.body;
-  // console.log(productName);
+module.exports = ({ req, errors, product = {} }) => {
+  const { productName, productDescription, productPrice } = product || req.body;
+  let submitMessage;
+  if (Object.values(product).length === 0) {
+    submitMessage = 'Create';
+  } else {
+    submitMessage = 'Edit';
+  }
   return generateLayout({
     req,
     content: `
@@ -32,8 +37,7 @@ module.exports = ({ req, errors }) => {
                 name="productDescription"
                 class="textarea"
                 placeholder="Some descriptive text..."
-                value="${productDescription || ''}"
-                ></textarea>
+                >${productDescription || ''}</textarea>
               </div>
               ${getErrors(errors, 'productDescription')}
             </div>
@@ -71,7 +75,7 @@ module.exports = ({ req, errors }) => {
             <div class="buttons">
               <p class="control">
                 <button type="submit" class="button is-link">
-                  Submit
+                  ${submitMessage}
                 </button>
               </p>
               <p class="control">
