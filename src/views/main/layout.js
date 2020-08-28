@@ -22,11 +22,11 @@ module.exports = ({ content }) => `
 
             <div class="navbar-menu">
               <div class="navbar-start">
-                <a class="navbar-item">
+                <a href="/" class="navbar-item">
                   <i class="fa fa-star"></i> Products
                 </a>
 
-                <a class="navbar-item">
+                <a href="/cart" class="navbar-item">
                   <i class="fa fa-shopping-cart"></i> Cart
                 </a>
 

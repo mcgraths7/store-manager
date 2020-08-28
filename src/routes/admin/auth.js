@@ -57,7 +57,6 @@ authRouter.post(
   async (req, res) => {
     const { email } = req.body;
     const existingUser = await userRepo.getOneBy({ email });
-
     req.session.userId = existingUser.id;
     return res.status(200).redirect('/admin/products');
   },
