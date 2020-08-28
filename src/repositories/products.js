@@ -6,8 +6,10 @@ const randomId = () => crypto.randomBytes(4).toString('hex');
 
 class ProductsRepository extends Repository {
   async create(attrs) {
+    const newPrice = parseFloat(attrs.productPrice);
     const record = {
       ...attrs,
+      newPrice,
     };
     record.id = randomId();
 

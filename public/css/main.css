@@ -144,3 +144,15 @@ body {
   display: flex;
   align-items: center;
 }
+
+table {
+  width: 100%;
+}
+
+.wide-cell {
+  width: 40%;
+}
+
+.normal-cell {
+  width: 15%;
+}

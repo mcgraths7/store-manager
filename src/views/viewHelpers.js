@@ -12,9 +12,11 @@ module.exports = {
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a href="/admin/signout" class="button is-primary">
-                <strong>Sign out</strong>
-              </a>
+              <form action="/admin/signout">
+                <button class="button is-primary">
+                  <strong>Sign out</strong>
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -24,12 +26,16 @@ module.exports = {
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a href="/admin/signup" class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a href="/admin/signin" class="button is-light">
-              Sign in
-            </a>
+            <form action="/admin/signup">
+              <button class="button is-primary">
+                <strong>Sign up</strong>
+              </button>
+            </form>
+            <form action="/admin/signin">
+              <button class="button is-light">
+                Sign in
+              </button>
+            </form>
           </div>
         </div>
       </div>
