@@ -1,16 +1,7 @@
 const generateLayout = require('../layout');
+const { transformPrice, shortenDescription } = require('../../viewHelpers');
 
 module.exports = ({ req, products }) => {
-  const transformPrice = (price) => price.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
-  const shortenDescription = (description) => {
-    if (description.length < 50) {
-      return description;
-    }
-    return `${description.slice(0, 50)}...`;
-  };
   const renderedProducts = products
     .map(
       (product) => `

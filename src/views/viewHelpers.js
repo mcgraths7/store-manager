@@ -41,4 +41,17 @@ module.exports = {
       </div>
     `;
   },
+  transformPrice(price) {
+    return price.toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+  },
+  shortenDescription(description) {
+    if (description.length < 50) {
+      return description;
+    }
+    return `${description.slice(0, 50)}...`;
+  },
+
 };
