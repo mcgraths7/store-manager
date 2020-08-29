@@ -16,7 +16,7 @@ module.exports = ({ content }) => `
           <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
               <a class="navbar-item" href="/">
-                <img src="images/logo.png" height="100" width="75">
+                <p class="subtitle">Brand Name Here</p>
               </a>
             </div>
 
@@ -45,6 +45,13 @@ module.exports = ({ content }) => `
           </nav>
         </header>
         ${content}
+        <footer class="footer">
+          <div class="content has-text-centered">
+            <p>
+              <strong>Made with <a href="https://bulma.io">Bulma</a></strong>
+            </p>
+          </div>
+        </footer>
       </body>
     </html>
   `;

@@ -21,7 +21,33 @@
     "id": "4b2cd005"
   },
   {
-    "products": [],
+    "products": [
+      {
+        "productId": "ac3d7258",
+        "qty": 1
+      },
+      {
+        "productId": "e7fccbd5",
+        "qty": 1
+      }
+    ],
     "id": "38a776d0"
+  },
+  {
+    "products": [
+      {
+        "productId": "e7fccbd5",
+        "qty": 1
+      },
+      {
+        "productId": "9317ff17",
+        "qty": 1
+      },
+      {
+        "productId": "2c8745bb",
+        "qty": 1
+      }
+    ],
+    "id": "727cdf24"
   }
 ]

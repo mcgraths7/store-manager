@@ -43,7 +43,6 @@ cartsRouter.post('/cart/products/:productId', async (req, res) => {
     cart = await cartRepo.getOne(req.session.cartId);
   }
   await cartRepo.modifyCart(req.session.cartId, productId, 1);
-  console.log(cart.products);
   return res.status(200).redirect('/cart');
 });
 

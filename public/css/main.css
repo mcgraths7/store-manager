@@ -49,16 +49,12 @@ body {
   color: var(--primary);
 }
 
-.navbar-brand {
-  padding-top: 5px;
-}
-
 .navbar-brand a {
-  color: var(--white);
+  color: var(--primary);
 }
 
 .navbar-brand a:hover {
-  color: var(--white);
+  color: var(--primary);
 }
 
 .columns.products {
