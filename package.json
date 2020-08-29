@@ -25,6 +25,7 @@
   },
   "scripts": {
     "dev": "nodemon src/index.js",
-    "watch": "webpack --mode production"
+    "build": "webpack --mode production",
+    "start": "node index.js"
   }
 }

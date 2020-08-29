@@ -2,11 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 
-const secrets = require('./secrets.json');
-const authRouter = require('./routes/admin/auth');
-const productRouter = require('./routes/admin/products');
-const storefrontRouter = require('./routes/main/storefront');
-const cartsRouter = require('./routes/main/carts');
+const secrets = require('./src/secrets.json');
+const authRouter = require('./src/routes/admin/auth');
+const productRouter = require('./src/routes/admin/products');
+const storefrontRouter = require('./src/routes/main/storefront');
+const cartsRouter = require('./src/routes/main/carts');
 
 const app = express();
 
